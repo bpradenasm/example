@@ -1,0 +1,70 @@
+\documentclass[a4paper,11pt]{article}
+\usepackage[american]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage{geometry}
+
+\usepackage{booktabs}  
+\usepackage{graphicx} 
+\usepackage{amsmath,amssymb}
+\usepackage{listings}
+\lstset{%
+backgroundcolor=\color{cyan!10},
+basicstyle=\ttfamily,
+numbers=left,numberstyle=\scriptsize
+}
+%\bibliographystyle{plain}
+\bibliographystyle{unsrt}
+
+\usepackage[wby]{callouts}
+
+\title{Beam and Window functions manual}
+
+
+%The Observed Squeezed Limit of Cosmological Three-Point Functions  
+
+%Vanishing of local non-Gaussianity in canonical single field inflation
+\author{Basti\'an Pradenas M\'arquez}
+
+\begin{document}
+\maketitle
+
+\section{Window function}
+\subsection{ \textbf{TT-PP-TP window function(focal plane): }    }
+
+\begin{itemize}
+
+\item  \textbf{Input:}  a set 14 coefficient from the beam Hermite functions parametrization ($\sigma_{b},\left\{ a_{n}  \right\} _{n=0}^{n=12}$)   
+
+\textsl{sigma_focal_plane.txt}, $textsl{parameters_focal_plane.txt},\textsl{covariance_focal_plane.txt}. \textsl{OMEGA.txt} .   Archivo de texto \textsl{B_ell_T_i250.txt}
+
+$\textsl{normalized_parameters_focal_plane.txt}$, $\textsl{normalized_covariance_focal_plane.txt}$.
+
+\textbf{BEAM$\_$normalization(sigma, c0, ..., c12) }
+
+\textbf{BEAM(theta,sigma, c0, c1, ..., c12)} compose the beam $B(\theta)=\sum_{n} a_{n} H_{n}(\theta/\sigma) \exp(-1/2 \theta^{2}/\sigma_{b}^{2}  )    $
+
+\textbf{BEAM$\_$2i(theta,sigma,i)} Evaluate the $B_{2n}$ mode in $\theta$
+
+
+\textbf{integrand(theta,sigma,l,i)} Define the integrand for the Harmonic transformation of the $B_{2n}$-mode. $2\pi \sin(\theta)B_{2n}(\theta)P_{l}(\cos(\theta))$
+
+
+\textbf{basis$\_$trans(sigma,l,i)} Compute the Harmonic transformation of the $B_{2n}$-mode.   $\int_{0}^{\pi}  d\theta 2\pi \sin(\theta)B_{2n}(\theta)P_{l}(\cos(\theta))$
+
+\textbf{FWHM($\theta$):} Return the beam Full Width at Half maximum(FWHM)  
+
+
+\end{itemize}
+
+
+
+
+
+
+
+
+\bibliography{thesis_project_bib.bib}
+
+
+
+\end{document}
